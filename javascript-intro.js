@@ -28,7 +28,22 @@ function sum () {
 	return sum;
 }
 
+console.log('sum(10,10,10): ' + sum(10,10,10));
+console.log('sum(2,2,2,2,2,2): ' + sum(2,2,2,2,2,2));
 
-console.log(sum(10,10,10));
+function add(a, b) {
+	return a + b;
+}
 
-console.log(sum(2,2,2,2,2,2));
+function sub(a, b)
+{
+	return a - b;
+}
+
+function calc (fn, a, b) {
+	return fn.call(this, a, b)
+}
+
+
+console.log('calc(add, 1, 3): ', calc(add, 1, 3));
+console.log('calc(sub, 4, 3): ', calc(sub, 4, 3));
