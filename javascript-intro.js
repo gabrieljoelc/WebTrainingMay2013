@@ -44,6 +44,8 @@ function sub()
 
 function calc (methodName) {
 	var arr = Array.prototype.slice.call(arguments, 1, arguments.length);
+	// shouldn't use eval(). should be able to do something like
+	// this[methodName], but doesn't work in node.js right now
 	return eval(methodName).apply(this, arr);
 }
 
