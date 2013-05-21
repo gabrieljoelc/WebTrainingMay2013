@@ -31,19 +31,21 @@ function sum () {
 console.log('sum(10,10,10): ' + sum(10,10,10));
 console.log('sum(2,2,2,2,2,2): ' + sum(2,2,2,2,2,2));
 
-function add(a, b) {
-	return a + b;
-}
-
-function sub(a, b)
+function sub()
 {
-	return a - b;
+	var sum = arguments[0];
+	// can't use for(var arg in arguments)
+	for(var index = 1; index < arguments.length; index++)
+	{
+		sum -= arguments[index];
+	}
+	return sum;
 }
 
-function calc (fn, a, b) {
-	return fn.call(this, a, b)
+function calc (methodName) {
+	var arr = Array.prototype.slice.call(arguments, 1, arguments.length);
+	return eval(methodName).apply(this, arr);
 }
 
-
-console.log('calc(add, 1, 3): ', calc(add, 1, 3));
-console.log('calc(sub, 4, 3): ', calc(sub, 4, 3));
+console.log('calc(sum, 1, 3): ', calc('sum', 1, 3));
+console.log('calc(sub, 4, 3): ', calc('sub', 4, 3, 1));
