@@ -16,3 +16,19 @@ function fullname(obj) {
 
 console.log('p1.fullname(): ' + p1.fullname());
 console.log('fullname(p2): ' + fullname(p2));
+
+
+function sum () {
+	var sum = 0;
+	// can't use for(var arg in arguments)
+	for(var index = 0; index < arguments.length; index++)
+	{
+		sum += arguments[index];
+	}
+	return sum;
+}
+
+
+console.log(sum(10,10,10));
+
+console.log(sum(2,2,2,2,2,2));
