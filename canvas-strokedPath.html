@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>Stroked Path</title>
+</head>
+
+<body>
+
+<canvas id="c1" width="600" height="400"></canvas>
+
+	<script>
+		
+		var ctx = document.getElementById('c1').getContext('2d');
+
+		ctx.beginPath();
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = 'green';
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.lineWidth = 4;
+		ctx.strokeStyle = 'blue';
+		ctx.moveTo(70, 25);
+		ctx.lineTo(105, 100);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.lineWidth = 4;
+		ctx.strokeStyle = 'red';
+		ctx.arc(100, 75, 50, 0, Math.PI*2, false);
+		ctx.stroke();
+		ctx.fillStyle="black";
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.lineWidth = 4;
+		ctx.strokeStyle = 'red';
+		ctx.arc(300, 200, 50, 0, Math.PI, true);
+		ctx.stroke();
+		ctx.fillStyle="green";
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.lineWidth = 4;
+		ctx.strokeStyle = 'red';
+		ctx.arc(100, 200, 50, 0, Math.PI*1.5, true);
+		ctx.stroke();
+		ctx.lineTo(100, 200);
+		ctx.stroke();
+		ctx.lineTo(150, 200);
+		ctx.stroke();
+		ctx.fill();
+
+
+
+	</script>
+
+</body>
+</html>

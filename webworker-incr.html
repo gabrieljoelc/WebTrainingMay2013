@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>Web Worker</title>
+	<script>
+		var w1 = new Worker("worker-incr.js");
+
+		w1.onmessage = function (ev)
+		{
+			alert(ev.data);
+		}
+		w1.postMessage('init');
+
+		function incrClick () {
+			w1.postMessage('incr');
+		}
+
+	</script>
+</head>
+
+<body>
+
+<input type="button" onclick="incrClick();" value="Incr" />
+
+</body>
+</html>

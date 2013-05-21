@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>Web Worker</title>
+	<script>
+		var w1 = new Worker("worker-echo.js");
+
+		w1.onmessage = function (ev)
+		{
+			alert(ev.data);
+		}
+
+		w1.postMessage("hello");
+
+	</script>
+</head>
+
+<body>
+</body>
+</html>
