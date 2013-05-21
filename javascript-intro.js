@@ -49,3 +49,11 @@ function calc (methodName) {
 
 console.log('calc(sum, 1, 3): ', calc('sum', 1, 3));
 console.log('calc(sub, 4, 3): ', calc('sub', 4, 3, 1));
+
+// gets "hoisted"
+hoist1();
+function hoist1() {console.log('hoist1');}
+
+// doesn't get hoisted
+hoist2();
+var hoist2 = function () {console.log('hoist2');};
