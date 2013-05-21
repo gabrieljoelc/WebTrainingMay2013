@@ -57,5 +57,17 @@ hoist1();
 function hoist1() {console.log('hoist1');}
 
 // doesn't get hoisted
-hoist2();
-var hoist2 = function () {console.log('hoist2');};
+//hoist2();
+//var hoist2 = function () {console.log('hoist2');};
+
+function foo (num) {
+	var counter = num;
+	return function() {return counter++;};
+}
+
+
+var fooInstance = foo(3);
+console.log('fooInstance(): ', fooInstance());
+console.log('fooInstance(): ', fooInstance());
+console.log('fooInstance(): ', fooInstance());
+console.log('fooInstance(): ', fooInstance());
